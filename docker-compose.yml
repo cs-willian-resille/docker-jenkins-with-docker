@@ -1,0 +1,13 @@
+version: '2'
+services:
+  jenkins:
+    image: jenkins
+    privileged: true
+    ports: 
+      - 8080:8080
+      - 5000:5000
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock 
+      - /home/resille/Documents/onboard/persistence:/var/jenkins_home
+    container_name: jenkins_master
